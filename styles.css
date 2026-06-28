@@ -346,13 +346,27 @@ figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-he
   border: 1px solid rgba(255,255,255,.14);
   border-radius: 18px;
 }
-.hobby-card img {
-  width: 100%;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
+.hobby-images {
+  display: grid;
+  gap: 8px;
+  padding: 10px 10px 0;
 }
-.hobby-card div { padding: 18px 20px 20px; }
-.hobby-card span {
+.hobby-images img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.hobby-main {
+  height: 320px;
+  object-fit: contain;
+  background: #efece5;
+}
+.hobby-strip {
+  aspect-ratio: 16 / 5;
+}
+.hobby-copy { padding: 18px 20px 20px; }
+.hobby-copy span {
   display: block;
   margin-bottom: 8px;
   color: #8eddf0;
@@ -361,7 +375,7 @@ figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-he
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-.hobby-card p { margin: 0; color: #d6e5ec; font-size: .88rem; }
+.hobby-copy p { margin: 0; color: #d6e5ec; font-size: .88rem; }
 
 .contact { text-align: center; }
 .contact h2 { max-width: 900px; margin-right: auto; margin-left: auto; }
