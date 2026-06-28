@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mechanical engineering portfolio of Nolan McMahon: assistive technology, thermal diagnostics, mechatronics, and engineering validation.">
+  <meta name="description" content="Mechanical engineering portfolio of Nolan McMahon: assistive technology, thermal diagnostics, FEA, mechatronics, and engineering validation.">
   <meta name="theme-color" content="#071a2f">
   <title>Nolan McMahon | Mechanical Engineering Portfolio</title>
   <link rel="stylesheet" href="styles.css">
@@ -32,8 +32,8 @@
         <h1>I build systems that turn hard-to-see signals into useful action.</h1>
         <p class="hero-lede">
           I'm Nolan McMahon, a mechanical engineering senior at Wentworth Institute of Technology.
-          My work spans assistive technology, thermal diagnostics, embedded sensing, and practical
-          prototype development.
+          My work spans assistive technology, thermal diagnostics, finite element analysis,
+          embedded sensing, and practical prototype development.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#work">Explore my work</a>
@@ -42,7 +42,7 @@
         <ul class="hero-facts" aria-label="Highlights">
           <li><strong>Aug. 2026</strong><span>B.S. Mechanical Engineering</span></li>
           <li><strong>IEEE EMBS</strong><span>Wentworth nominee, 2026</span></li>
-          <li><strong>Protected R&amp;D</strong><span>Server thermal diagnostics</span></li>
+          <li><strong>FEA + CFD</strong><span>Simulation-backed validation</span></li>
         </ul>
       </div>
       <div class="portrait-wrap reveal">
@@ -54,7 +54,7 @@
 
     <section class="intro-band" aria-label="Engineering focus">
       <p>
-        <span>My focus:</span> joining mechanical design, instrumentation, and controls into
+        <span>My focus:</span> joining mechanical design, simulation, instrumentation, and controls into
         prototypes that can be tested honestly—and improved around the people who may rely on them.
       </p>
     </section>
@@ -62,11 +62,11 @@
     <section class="section" id="work">
       <div class="section-heading reveal">
         <p class="eyebrow">Selected work</p>
-        <h2>Two projects. One engineering thread.</h2>
+        <h2>Three projects. One engineering thread.</h2>
         <p>
-          Both projects begin with a signal that is easy to miss: muscle activity in one case,
-          changing heat flow in the other. The work is about capturing that signal and making it
-          meaningful.
+          My strongest work connects physical systems to evidence: biological signals that move a
+          prosthetic hand, protected thermal diagnostics backed by CFD, and structural simulation
+          checked against hand calculations.
         </p>
       </div>
 
@@ -117,6 +117,31 @@
             <li>Instrumentation details intentionally withheld for IP protection</li>
           </ul>
           <a class="text-link" href="#thermal">Read the case study <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="feature-card fea-card reveal">
+        <div class="feature-image">
+          <img src="assets/fea-flange-results.webp" alt="SolidWorks Simulation von Mises and displacement plots for a high-pressure flange assembly">
+          <span class="image-label">FEA study · Spring 2026</span>
+        </div>
+        <div class="feature-copy">
+          <div class="tag-row">
+            <span class="tag">Finite element analysis</span>
+            <span class="tag">Pressure systems</span>
+          </div>
+          <p class="project-number">03</p>
+          <h3>High-Pressure Flange FEA Study</h3>
+          <p class="project-deck">
+            A SolidWorks Simulation study of an 11 in API 6A Type 6B flange assembly under bolt
+            preload, operating pressure, and proof pressure loading.
+          </p>
+          <ul class="project-points">
+            <li>Modeled flange, cap, gasket, and twelve-bolt assembly in SolidWorks</li>
+            <li>Applied contact, preload, fixed support, and internal pressure boundary conditions</li>
+            <li>Compared hand calculations with stress, displacement, and bolt-force trends</li>
+          </ul>
+          <a class="text-link" href="#fea">Read the case study <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </section>
@@ -354,6 +379,85 @@
       </div>
     </section>
 
+    <section class="case-study case-study-dark" id="fea">
+      <div class="case-hero section">
+        <div class="case-title reveal">
+          <p class="eyebrow">Case study 03 · Engineering analysis</p>
+          <h2>FEA</h2>
+          <p class="case-subtitle">High-pressure flange assembly simulation</p>
+        </div>
+        <div class="case-summary reveal">
+          <p>
+            For Simulation-Based Design, I analyzed an 11 in API 6A Type 6B flange assembly rated
+            for 5000 psi. The study connected standards-based geometry, hand calculations, contact
+            setup, bolt preload, and finite element results into one structural validation workflow.
+          </p>
+          <dl class="project-meta">
+            <div><dt>Model</dt><dd>Flange, cap, RTJ gasket, 12-bolt connection</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, SolidWorks Simulation, hand calculations</dd></div>
+            <div><dt>Loads</dt><dd>Preload only, 5000 psi operating, 7500 psi proof pressure</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="section insight-grid">
+        <div class="insight-card reveal">
+          <span class="big-number">01</span>
+          <h3>Built the assembly</h3>
+          <p>Created the flange, blind cap, ring-type joint gasket, studs, and nuts from API-style dimensional requirements.</p>
+        </div>
+        <div class="insight-card reveal">
+          <span class="big-number">02</span>
+          <h3>Defined the physics</h3>
+          <p>Used bolt connectors, preload, contact interactions, a fixed lower flange, and pressure on internal fluid-facing surfaces.</p>
+        </div>
+        <div class="insight-card reveal">
+          <span class="big-number">03</span>
+          <h3>Interpreted results</h3>
+          <p>Compared bolt-force, displacement, and stress trends against hand calculations and recognized where a sharp-edge singularity distorted peak stress.</p>
+        </div>
+      </div>
+
+      <div class="section test-layout fea-results">
+        <figure class="reveal">
+          <img src="assets/fea-flange-results.webp" alt="FEA results showing von Mises stress and displacement plots for the flange assembly">
+          <figcaption>SolidWorks Simulation results for the proof-pressure case, including von Mises and displacement plots.</figcaption>
+        </figure>
+        <div class="test-copy reveal">
+          <p class="eyebrow">Analysis workflow</p>
+          <h3>FEA treated as engineering evidence, not decoration.</h3>
+          <p>
+            The project evaluated how the bolted joint reacts as pressure increases from a
+            preload-only baseline to 5000 psi operating pressure and 7500 psi proof pressure. The
+            important result was the trend: internal pressure increased bolt axial force and joint
+            separation tendency, making controlled preload critical to sealing performance.
+          </p>
+          <div class="metric-grid metric-grid-dark">
+            <div><strong>11 in</strong><span>API 6A Type 6B flange assembly</span></div>
+            <div><strong>12</strong><span>Bolt connectors used for preload behavior</span></div>
+            <div><strong>5000 psi</strong><span>Operating pressure load case</span></div>
+            <div><strong>7500 psi</strong><span>Proof-pressure load case</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section drawing-feature drawing-feature-dark">
+        <div class="drawing-copy reveal">
+          <p class="eyebrow">Design communication</p>
+          <h3>Simulation started from documented geometry.</h3>
+          <p>
+            The report included assembly drawings, an exploded view, a bill of materials, and
+            component drawings so the simulation model could be understood as an actual mechanical
+            assembly rather than an isolated stress plot.
+          </p>
+        </div>
+        <figure class="reveal">
+          <img src="assets/fea-flange-drawing.webp" alt="Engineering drawing and exploded view of the analyzed high-pressure flange assembly">
+          <figcaption>Assembly drawing and exploded view used to communicate the modeled flange, cap, gasket, and bolted joint.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section experience" id="experience">
       <div class="section-heading reveal">
         <p class="eyebrow">Experience</p>
@@ -381,7 +485,7 @@
           <div>
             <p class="company">Wentworth Institute of Technology · Boston, MA</p>
             <h3>B.S. Mechanical Engineering</h3>
-            <p>Coursework and project work in heat transfer, fluid mechanics, FEA, mechanical design, additive manufacturing, instrumentation, and embedded systems.</p>
+            <p>Coursework and project work in heat transfer, fluid mechanics, CFD, FEA, mechanical vibrations, mechanical design, additive manufacturing, instrumentation, and embedded systems.</p>
           </div>
         </article>
       </div>
@@ -402,7 +506,7 @@
         <div class="toolkit reveal">
           <h3>Technical toolkit</h3>
           <div class="skill-groups">
-            <div><span>Design &amp; simulation</span><p>SolidWorks · ANSYS Fluent · FEA · Fusion 360 · GD&amp;T</p></div>
+            <div><span>Design &amp; simulation</span><p>SolidWorks · SolidWorks Simulation · ANSYS Fluent · FEA · CFD · GD&amp;T</p></div>
             <div><span>Embedded &amp; analysis</span><p>Arduino · ESP32 · ADC signal conditioning · MATLAB · Python</p></div>
             <div><span>Build &amp; validate</span><p>3D printing · prototyping · thermal testing · technical documentation</p></div>
           </div>

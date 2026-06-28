@@ -2,6 +2,12 @@
 
 A static, responsive portfolio prepared for GitHub Pages.
 
+Featured work includes:
+
+- PULSE myoelectric partial-hand prosthesis
+- Protected server thermal diagnostics with CFD-backed validation
+- High-pressure flange finite element analysis study
+
 ## Publish with GitHub Pages
 
 1. Create a new public GitHub repository.
