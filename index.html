@@ -236,21 +236,27 @@
           <figcaption>Three-link fingers support coordinated motion and adaptive contact.</figcaption>
         </figure>
       </div>
-      <div class="section drawing-feature drawing-feature-dark">
+      <div class="section pulse-analysis">
         <div class="drawing-copy reveal">
-          <p class="eyebrow">Engineering drawing package</p>
-          <h3>Master prosthetic assembly</h3>
+          <p class="eyebrow">Analysis and assembly</p>
+          <h3>Finger modeling tied back to the integrated CAD.</h3>
           <p>
-            The assembly drawing documents the four-finger architecture, palm-housing envelope,
-            cable-routing strategy, motor-housing inlet, and wrist/dorsum interface. It shows the
-            same kind of dimensioned design communication I would use to move from prototype to
-            manufacturable revision.
+            MATLAB analysis was used to explore finger workspace, sample configurations, and
+            fingertip force behavior. The resulting mechanism work was carried back into the
+            master assembly, where finger packaging, motor placement, PCB layout, and tendon
+            routing all had to coexist inside the prosthetic envelope.
           </p>
         </div>
-        <figure class="reveal">
-          <img src="assets/pulse-master-assembly.png" alt="Dimensioned master prosthetic assembly drawing for the PULSE four-finger prosthesis">
-          <figcaption>Dimensioned master assembly drawing showing top, bottom, side, front, and isometric views.</figcaption>
-        </figure>
+        <div class="analysis-figures">
+          <figure class="reveal">
+            <img src="assets/pulse-matlab-finger-analysis.webp" alt="MATLAB plots showing PULSE finger workspace, fingertip force, and sample finger configurations">
+            <figcaption>MATLAB-generated workspace and fingertip-force plots used to evaluate candidate finger configurations.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/pulse-master-assembly-render.webp" alt="Rendered PULSE master assembly showing motors, PCB placement, fingers, and palm housing">
+            <figcaption>Presentation master assembly render showing the integrated mechanism, motor layout, electronics, and palm housing.</figcaption>
+          </figure>
+        </div>
       </div>
 
 
