@@ -339,6 +339,29 @@ figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-he
 .skill-groups span { color: #8eddf0; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .skill-groups p { margin: 5px 0 0; color: #e4edf1; }
 .interests { margin: 24px 0 0; color: #a7c3d0; font-size: .82rem; }
+.hobby-card {
+  overflow: hidden;
+  margin-top: 28px;
+  background: rgba(7,26,47,.34);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+}
+.hobby-card img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+.hobby-card div { padding: 18px 20px 20px; }
+.hobby-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #8eddf0;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hobby-card p { margin: 0; color: #d6e5ec; font-size: .88rem; }
 
 .contact { text-align: center; }
 .contact h2 { max-width: 900px; margin-right: auto; margin-left: auto; }
