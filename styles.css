@@ -24,6 +24,7 @@ body {
   line-height: 1.6;
 }
 img, video { display: block; max-width: 100%; }
+.print-video-poster { display: none; }
 a { color: inherit; }
 button { font: inherit; }
 ::selection { color: white; background: var(--blue); }
@@ -441,4 +442,134 @@ footer p { margin: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+@media print {
+  @page {
+    size: Letter;
+    margin: .32in;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    overflow: visible;
+    background: var(--paper) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .site-header {
+    position: static;
+    min-height: 58px;
+    padding: 10px 0;
+    background: var(--paper);
+    backdrop-filter: none;
+  }
+
+  .skip-link,
+  .menu-button,
+  .hero-actions,
+  .contact-links {
+    display: none !important;
+  }
+
+  .hero,
+  .section,
+  footer {
+    max-width: 100%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 42px 0 58px;
+    gap: 46px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .case-study {
+    break-before: auto;
+  }
+
+  h1 {
+    font-size: 54px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .feature-card,
+  .insight-card,
+  .media-grid figure,
+  .review-grid figure,
+  .analysis-figures figure,
+  .video-card,
+  .experience-list article,
+  .hobby-card,
+  .toolkit {
+    break-inside: avoid;
+  }
+
+  .feature-image,
+  .feature-copy {
+    min-height: auto;
+  }
+
+  .feature-image img,
+  .media-grid img,
+  .media-wide img,
+  .review-grid img,
+  .review-large img,
+  .analysis-figures img {
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+  }
+
+  .test-layout figure img,
+  .next-system figure img,
+  .drawing-feature figure img {
+    max-height: 560px;
+    object-fit: contain;
+  }
+
+  .print-video-poster {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .video-card video {
+    display: none !important;
+  }
+
+  .video-card figcaption {
+    padding-top: 14px;
+  }
+
+  .portrait-wrap {
+    max-width: 380px;
+  }
+
+  .hobby-main {
+    height: auto;
+    max-height: 360px;
+  }
 }
