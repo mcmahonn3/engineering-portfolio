@@ -285,6 +285,7 @@ figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-he
 .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .video-card { overflow: hidden; background: rgba(255,255,255,.06); border: 1px solid var(--dark-line); border-radius: 20px; }
 .video-card video { width: 100%; aspect-ratio: 9 / 13; object-fit: cover; background: #020b14; }
+.video-card-wide video { aspect-ratio: 16 / 9; }
 .video-card figcaption { min-height: 94px; }
 .video-card figcaption strong { color: white; }
 .contribution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 0; }
