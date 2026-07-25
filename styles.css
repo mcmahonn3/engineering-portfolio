@@ -157,6 +157,8 @@ h3 { font-size: clamp(1.5rem, 2.4vw, 2.25rem); line-height: 1.12; letter-spacing
 .feature-image { position: relative; min-height: 500px; overflow: hidden; }
 .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
 .feature-card:hover .feature-image img { transform: scale(1.025); }
+.pulse-card .feature-image { background: #eef1f4; }
+.pulse-card .feature-image img { padding: 34px; object-fit: contain; }
 .fea-card .feature-image { background: #f7f8f4; }
 .fea-card .feature-image img { padding: 28px; object-fit: contain; }
 .image-label { position: absolute; left: 20px; bottom: 20px; padding: 8px 13px; color: white; background: rgba(7,26,47,.84); border-radius: 999px; font-size: .72rem; backdrop-filter: blur(8px); }
