@@ -320,6 +320,36 @@ figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-he
 .chart-grid figure { overflow: hidden; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; }
 .chart-grid img { width: 100%; }
 .data-note { margin-top: 26px; padding: 22px 26px; color: #4c443d; background: #fff5ed; border-left: 4px solid var(--orange); border-radius: 4px 14px 14px 4px; }
+.thermal-evidence { border-top: 1px solid var(--line); }
+.evidence-copy {
+  max-width: 860px;
+  margin-bottom: 34px;
+}
+.evidence-copy p:last-child { color: var(--muted); }
+.evidence-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+}
+.evidence-card {
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+.evidence-card img {
+  width: 100%;
+  height: 355px;
+  object-fit: cover;
+}
+.evidence-card figcaption { min-height: 76px; }
+.evidence-wide { grid-column: 1 / -1; }
+.evidence-wide img {
+  height: auto;
+  object-fit: contain;
+  background: #252525;
+}
 .next-system { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: center; border-top: 1px solid var(--line); }
 .next-system figure { overflow: hidden; border-radius: 20px; box-shadow: var(--shadow); }
 .next-system figure img { width: 100%; }
@@ -430,9 +460,11 @@ footer p { margin: 0; }
   .section { padding: 82px 0; }
   .case-hero { gap: 35px; }
   .project-meta { grid-template-columns: 1fr; }
-  .media-grid, .review-grid, .chart-grid, .contribution-grid { grid-template-columns: 1fr; }
+  .media-grid, .review-grid, .chart-grid, .evidence-grid, .contribution-grid { grid-template-columns: 1fr; }
   .media-wide { grid-column: auto; }
+  .evidence-wide { grid-column: auto; }
   .media-grid img, .media-wide img, .review-grid img, .review-large img { height: 390px; }
+  .evidence-card img { height: auto; }
   .timeline { grid-template-columns: 1fr; }
   .milestone { grid-template-columns: 1fr; gap: 20px; }
   .video-grid { grid-template-columns: 1fr; }
