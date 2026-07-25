@@ -1,3 +1,17 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+const initialUrl = new URL(window.location.href);
+if (initialUrl.hash) {
+  history.replaceState(null, "", initialUrl.pathname + initialUrl.search);
+}
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+});
+
 const menuButton = document.querySelector(".menu-button");
 const nav = document.querySelector("#site-nav");
 
