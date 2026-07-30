@@ -313,8 +313,18 @@ figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-he
 .contribution, .responsibility { padding: 42px; border: 1px solid var(--dark-line); border-radius: 20px; }
 .contribution p:last-child, .responsibility p:last-child { color: #bdcad5; }
 .responsibility { background: rgba(233,106,40,.08); border-color: rgba(233,106,40,.4); }
-.milestone { display: grid; grid-template-columns: 220px 1fr; gap: 60px; padding-top: 50px; padding-bottom: 50px; border-top: 1px solid var(--dark-line); }
-.milestone > p:last-child { margin: 0; font-size: 1.35rem; }
+.milestone { display: grid; grid-template-columns: .42fr .58fr; gap: 44px; align-items: center; padding-top: 50px; padding-bottom: 50px; border-top: 1px solid var(--dark-line); }
+.milestone-copy > p:last-child { margin: 0; font-size: 1.35rem; }
+.poster-card {
+  overflow: hidden;
+  background: rgba(255,255,255,.07);
+  border: 1px solid var(--dark-line);
+  border-radius: 20px;
+}
+.poster-card img {
+  display: block;
+  width: 100%;
+}
 
 .insight-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; padding-top: 0; }
 .insight-card { padding: 34px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; }
