@@ -245,6 +245,35 @@ figure { margin: 0; }
 figcaption { padding: 14px 17px 17px; color: #536477; font-size: .82rem; line-height: 1.45; }
 .case-study-dark figcaption { color: #b7c5d1; }
 
+.pulse-process { padding-top: 0; }
+.pulse-process .section-heading {
+  max-width: 860px;
+  margin-bottom: 28px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.process-grid figure {
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--dark-line);
+  border-radius: 20px;
+}
+.process-grid img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  background: #0d2743;
+}
+.process-grid figure:nth-child(2) img {
+  object-fit: contain;
+  padding: 14px;
+  background: #eef1f4;
+}
+.process-grid figcaption { min-height: 112px; }
+
 .drawing-feature {
   display: grid;
   grid-template-columns: .72fr 1.28fr;
@@ -463,7 +492,7 @@ footer p { margin: 0; }
   .signal-flow { grid-template-columns: 1fr; }
   .signal-flow i { transform: rotate(90deg); justify-self: center; }
   .timeline { grid-template-columns: 1fr 1fr; gap: 30px 0; }
-  .media-grid, .review-grid { grid-template-columns: 1fr 1fr; }
+  .media-grid, .review-grid, .process-grid { grid-template-columns: 1fr 1fr; }
   .media-wide { grid-column: 1 / -1; grid-row: auto; }
   .media-wide img { height: 500px; }
   .review-large { grid-column: 1 / -1; grid-row: auto; }
@@ -489,10 +518,10 @@ footer p { margin: 0; }
   .section { padding: 82px 0; }
   .case-hero { gap: 35px; }
   .project-meta { grid-template-columns: 1fr; }
-  .media-grid, .review-grid, .chart-grid, .evidence-grid, .contribution-grid { grid-template-columns: 1fr; }
+  .media-grid, .review-grid, .process-grid, .chart-grid, .evidence-grid, .contribution-grid { grid-template-columns: 1fr; }
   .media-wide { grid-column: auto; }
   .evidence-wide { grid-column: auto; }
-  .media-grid img, .media-wide img, .review-grid img, .review-large img { height: 390px; }
+  .media-grid img, .media-wide img, .review-grid img, .review-large img, .process-grid img { height: 390px; }
   .evidence-card img { height: auto; }
   .timeline { grid-template-columns: 1fr; }
   .milestone { grid-template-columns: 1fr; gap: 20px; }
@@ -584,6 +613,7 @@ footer p { margin: 0; }
   .insight-card,
   .media-grid figure,
   .review-grid figure,
+  .process-grid figure,
   .analysis-figures figure,
   .video-card,
   .experience-list article,
@@ -602,6 +632,7 @@ footer p { margin: 0; }
   .media-wide img,
   .review-grid img,
   .review-large img,
+  .process-grid img,
   .analysis-figures img {
     height: auto;
     max-height: 520px;
