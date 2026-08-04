@@ -1,5 +1,5 @@
 window.BOARDLAB_CLARITY = {
-  projectId: "xvbvoql4vu",
+  projectId: "xxa8jeuk0l",
   requireConsent: true,
   testGroup: "prototype-a",
 };
