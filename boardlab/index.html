@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BoardLab UX Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="insert-rail" aria-label="Insert tools">
+        <button class="rail-brand" id="homeButton" type="button" title="Home">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h6v6H5zM13 5h6v4h-6zM13 11h6v8h-6zM5 13h6v6H5z" /></svg>
+        </button>
+
+        <div class="rail-tools">
+          <button class="rail-tool" type="button" data-add="note" title="Add note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h4" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="image" title="Add image">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 15l3-3 2 2 3-4 3 5M8.5 9.5h.1" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="link" title="Add link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12a4 4 0 0 0 6 3l3-3a4 4 0 0 0-6-6l-1 1M15 12a4 4 0 0 1-6 3l-3-3a4 4 0 0 1 6-6l1 1" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="todo" title="Add to-do">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14M4 7l1 1 2-2M4 12l1 1 2-2" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="column" title="Add column">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 8h8M8 12h8M8 16h8" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="board" title="Add board">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="comment" title="Add comment">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="table" title="Add table">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 10h16M9 5v14M15 5v14" /></svg>
+          </button>
+          <button class="rail-tool" type="button" data-add="sketch" title="Add sketch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17c4-8 7 4 10-3 2-5 5-4 6-2M5 20h14" /></svg>
+          </button>
+        </div>
+
+        <div class="rail-bottom">
+          <button class="rail-tool" id="templateToggle" type="button" title="Templates">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v7H4zM13 5h7v7h-7zM4 14h7v5H4zM13 14h7v5h-7z" /></svg>
+          </button>
+          <button class="rail-tool danger" id="resetButton" type="button" title="Reset board">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12a7 7 0 1 0 2.1-5M5 4v5h5" /></svg>
+          </button>
+        </div>
+      </aside>
+
+      <aside class="library-panel" aria-label="Workspace">
+        <div class="brand-copy">
+          <strong>BoardLab</strong>
+          <span>UX study workspace</span>
+        </div>
+
+        <label class="panel-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 18a7.5 7.5 0 1 1 5.3-12.8 7.5 7.5 0 0 1-5.3 12.8zm5.7-1.8 3.8 3.8" /></svg>
+          <input id="searchInput" type="search" placeholder="Search board" data-clarity-mask="true" />
+        </label>
+
+        <section class="panel-section" aria-labelledby="boardsHeading">
+          <div class="panel-row">
+            <h2 id="boardsHeading">Boards</h2>
+            <button class="tiny-button" type="button" data-add="board" title="New board">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            </button>
+          </div>
+          <nav class="board-list" id="boardList" aria-label="Board list"></nav>
+        </section>
+
+        <section class="panel-section" aria-labelledby="inboxHeading">
+          <div class="panel-row">
+            <h2 id="inboxHeading">Unsorted</h2>
+            <span class="count-pill" id="inboxCount">3</span>
+          </div>
+          <div class="inbox-list" id="inboxList"></div>
+        </section>
+
+        <div class="usage-meter">
+          <div class="meter-copy">
+            <span>Study session</span>
+            <strong id="cardCount">0 cards</strong>
+          </div>
+          <div class="meter-track"><span id="meterBar"></span></div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="board-title-block">
+            <div class="breadcrumbs" id="breadcrumbs"></div>
+            <h1 id="boardTitle" contenteditable="true" data-clarity-mask="true">College Group Project</h1>
+          </div>
+
+          <div class="view-controls">
+            <button class="icon-button" id="zoomOutButton" type="button" title="Zoom out">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /></svg>
+            </button>
+            <input id="zoomRange" type="range" min="60" max="140" value="100" aria-label="Zoom" />
+            <output id="zoomOutput">100%</output>
+            <button class="icon-button" id="zoomInButton" type="button" title="Zoom in">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            </button>
+          </div>
+
+          <div class="top-actions" aria-label="Board actions">
+            <button class="text-button primary" id="startTaskButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              <span>Start task</span>
+            </button>
+            <button class="text-button success" id="completeTaskButton" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+              <span>Finish</span>
+            </button>
+            <button class="text-button" id="shareButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8M13 7l5 5-5 5M6 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h1" /></svg>
+              Share
+            </button>
+            <button class="icon-button" id="testModeButton" type="button" title="Focus mode" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+            </button>
+            <button class="icon-button" id="exportButton" type="button" title="Export JSON">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="canvas-wrap" aria-label="Board canvas">
+          <div class="board-stage" id="boardStage">
+            <div class="board" id="board" aria-live="polite"></div>
+          </div>
+
+          <aside class="minimap" aria-label="Board overview">
+            <div class="minimap-window"></div>
+            <div class="minimap-dot dot-a"></div>
+            <div class="minimap-dot dot-b"></div>
+            <div class="minimap-dot dot-c"></div>
+          </aside>
+
+          <section class="template-picker" id="templatePicker" aria-label="Templates">
+            <div class="template-head">
+              <strong>Templates</strong>
+              <button class="tiny-button" id="closeTemplates" type="button" title="Close templates">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+              </button>
+            </div>
+            <button class="template-card" type="button" data-template="brief">
+              <span>Class project board</span>
+              <small>Research, drafting, presentation</small>
+            </button>
+            <button class="template-card" type="button" data-template="research">
+              <span>Interview synthesis</span>
+              <small>Quotes, themes, tasks, questions</small>
+            </button>
+            <button class="template-card" type="button" data-template="moodboard">
+              <span>Moodboard</span>
+              <small>References, links, palette, direction</small>
+            </button>
+          </section>
+
+          <section class="study-task-panel" id="studyTaskPanel" aria-label="User test task">
+            <div class="study-task-head">
+              <span>Usability test</span>
+              <strong id="taskTimer">Not started</strong>
+              <button class="tiny-button" id="studyPanelToggle" type="button" title="Hide instructions">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              </button>
+            </div>
+            <div class="study-intro">
+              <p>This is not a test of you or your technical ability. We are testing whether the interface communicates clearly.</p>
+              <p>Please think out loud as you use the site: what you are looking for, what seems clear, and what feels confusing.</p>
+            </div>
+            <ol class="study-steps">
+              <li>
+                <strong>Create and organize a project board.</strong>
+                Imagine you are using this tool for a college group project. Create or organize three sections: Research, Drafting, and Presentation. Add at least three notes, cards, or pieces of project information and arrange them in a way that makes sense to you.
+              </li>
+              <li>
+                <strong>Add task and collaboration elements.</strong>
+                Add two task items related to the project. Then try to add any available deadline, label, comment, teammate note, or collaboration-related feature.
+              </li>
+            </ol>
+            <details class="study-questions" open>
+              <summary>After-task questions</summary>
+              <ol>
+                <li>What was easiest to understand?</li>
+                <li>What was most confusing?</li>
+                <li>Did the visual board help you organize the project?</li>
+                <li>Did the site feel more useful for brainstorming, task tracking, or both?</li>
+                <li>Were there any buttons, labels, or features that were unclear?</li>
+                <li>Would you use a tool like this for a class group project? Why or why not?</li>
+                <li>Rate your overall satisfaction from 1-5.</li>
+              </ol>
+            </details>
+          </section>
+        </section>
+      </main>
+
+      <aside class="inspector" aria-label="Card inspector">
+        <div class="inspector-head">
+          <span class="eyebrow">Inspector</span>
+          <strong id="inspectorType">No selection</strong>
+        </div>
+
+        <form class="inspector-form" id="inspectorForm">
+          <label>
+            Title
+            <input id="titleInput" type="text" disabled data-clarity-mask="true" />
+          </label>
+
+          <label>
+            Body
+            <textarea id="bodyInput" rows="6" disabled data-clarity-mask="true"></textarea>
+          </label>
+
+          <label id="urlField">
+            URL
+            <input id="urlInput" type="text" disabled data-clarity-mask="true" />
+          </label>
+
+          <fieldset>
+            <legend>Color</legend>
+            <div class="swatches" id="swatches">
+              <button class="swatch yellow" type="button" data-color="yellow" title="Yellow"></button>
+              <button class="swatch mint" type="button" data-color="mint" title="Mint"></button>
+              <button class="swatch coral" type="button" data-color="coral" title="Coral"></button>
+              <button class="swatch sky" type="button" data-color="sky" title="Sky"></button>
+              <button class="swatch lilac" type="button" data-color="lilac" title="Lilac"></button>
+              <button class="swatch white" type="button" data-color="white" title="White"></button>
+            </div>
+          </fieldset>
+
+          <div class="inspector-actions">
+            <button class="secondary-button" id="duplicateButton" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V5h11v1" /></svg>
+              Duplicate
+            </button>
+            <button class="secondary-button" id="openBoardButton" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              Open
+            </button>
+          </div>
+
+          <button class="delete-button" id="deleteButton" type="button" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12M10 11v6M14 11v6M9 7l1-2h4l1 2M8 7v13h8V7" /></svg>
+            Delete card
+          </button>
+        </form>
+      </aside>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="card" tabindex="0">
+        <div class="card-chrome">
+          <span class="drag-dots" aria-hidden="true"></span>
+          <span class="card-type-label"></span>
+          <div class="card-tools">
+            <button class="card-action duplicate-card" type="button" title="Duplicate">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V5h11v1" /></svg>
+            </button>
+            <button class="card-action open-board-card" type="button" title="Open board">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+            </button>
+            <button class="card-action delete-card" type="button" title="Delete">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12M10 11v6M14 11v6M9 7l1-2h4l1 2M8 7v13h8V7" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="card-content" data-clarity-mask="true"></div>
+      </article>
+    </template>
+
+    <script src="clarity-config.js"></script>
+    <script src="clarity-tracking.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
