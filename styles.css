@@ -157,8 +157,8 @@ h3 { font-size: clamp(1.5rem, 2.4vw, 2.25rem); line-height: 1.12; letter-spacing
 .feature-image { position: relative; min-height: 500px; overflow: hidden; }
 .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
 .feature-card:hover .feature-image img { transform: scale(1.025); }
-.pulse-card .feature-image { background: #eef1f4; }
-.pulse-card .feature-image img { padding: 34px; object-fit: contain; }
+.pulse-card .feature-image { background: #0d2743; }
+.pulse-card .feature-image img { padding: 0; object-fit: cover; }
 .fea-card .feature-image { background: #f7f8f4; }
 .fea-card .feature-image img { padding: 28px; object-fit: contain; }
 .image-label { position: absolute; left: 20px; bottom: 20px; padding: 8px 13px; color: white; background: rgba(7,26,47,.84); border-radius: 999px; font-size: .72rem; backdrop-filter: blur(8px); }
@@ -198,6 +198,45 @@ h3 { font-size: clamp(1.5rem, 2.4vw, 2.25rem); line-height: 1.12; letter-spacing
 .signal-flow strong, .signal-flow small { display: block; }
 .signal-flow small { margin-top: 8px; color: #9fb0bf; }
 .signal-flow i { color: var(--blue-bright); font-size: 1.4rem; font-style: normal; }
+
+.current-prototype-showcase {
+  padding-top: 0;
+  border-top: 1px solid var(--dark-line);
+}
+.current-prototype-showcase .section-heading {
+  max-width: 960px;
+  margin-bottom: 30px;
+}
+.current-prototype-grid {
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.current-prototype-grid figure {
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--dark-line);
+  border-radius: 24px;
+  box-shadow: 0 28px 90px rgba(0,0,0,.22);
+}
+.current-prototype-photo img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+.current-prototype-video video {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: contain;
+  background: #020b14;
+}
+.current-prototype-grid figcaption {
+  min-height: 88px;
+  font-size: .9rem;
+}
+.current-prototype-grid figcaption strong { color: white; }
 
 .design-review { padding-top: 0; border-top: 1px solid var(--dark-line); }
 .design-review .section-heading { margin-bottom: 42px; }
@@ -488,7 +527,7 @@ footer p { margin: 0; }
   .portrait-wrap { max-width: 520px; margin: auto; }
   .feature-card, .feature-card:nth-of-type(3) { grid-template-columns: 1fr; }
   .feature-card:nth-of-type(3) .feature-image { order: 0; }
-  .case-hero, .video-section, .test-layout, .next-system, .about-inner, .drawing-feature, .pulse-analysis { grid-template-columns: 1fr; gap: 55px; }
+  .case-hero, .current-prototype-grid, .video-section, .test-layout, .next-system, .about-inner, .drawing-feature, .pulse-analysis { grid-template-columns: 1fr; gap: 55px; }
   .signal-flow { grid-template-columns: 1fr; }
   .signal-flow i { transform: rotate(90deg); justify-self: center; }
   .timeline { grid-template-columns: 1fr 1fr; gap: 30px 0; }
@@ -518,10 +557,10 @@ footer p { margin: 0; }
   .section { padding: 82px 0; }
   .case-hero { gap: 35px; }
   .project-meta { grid-template-columns: 1fr; }
-  .media-grid, .review-grid, .process-grid, .chart-grid, .evidence-grid, .contribution-grid { grid-template-columns: 1fr; }
+  .media-grid, .review-grid, .process-grid, .current-prototype-grid, .chart-grid, .evidence-grid, .contribution-grid { grid-template-columns: 1fr; }
   .media-wide { grid-column: auto; }
   .evidence-wide { grid-column: auto; }
-  .media-grid img, .media-wide img, .review-grid img, .review-large img, .process-grid img { height: 390px; }
+  .media-grid img, .media-wide img, .review-grid img, .review-large img, .process-grid img, .current-prototype-photo img, .current-prototype-video video { height: 390px; }
   .evidence-card img { height: auto; }
   .timeline { grid-template-columns: 1fr; }
   .milestone { grid-template-columns: 1fr; gap: 20px; }
@@ -614,6 +653,7 @@ footer p { margin: 0; }
   .media-grid figure,
   .review-grid figure,
   .process-grid figure,
+  .current-prototype-grid figure,
   .analysis-figures figure,
   .video-card,
   .experience-list article,
@@ -633,6 +673,7 @@ footer p { margin: 0; }
   .review-grid img,
   .review-large img,
   .process-grid img,
+  .current-prototype-photo img,
   .analysis-figures img {
     height: auto;
     max-height: 520px;
@@ -653,7 +694,8 @@ footer p { margin: 0; }
     object-fit: cover;
   }
 
-  .video-card video {
+  .video-card video,
+  .current-prototype-video video {
     display: none !important;
   }
 
